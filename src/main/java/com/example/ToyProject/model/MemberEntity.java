@@ -1,5 +1,6 @@
 package com.example.ToyProject.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,11 +25,18 @@ public class MemberEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "key")
     private String key;
     
+    @Column(name = "email")
     private String email;
+    
+    @Column(name = "membername")
     private String membername;
+    
+    @Column(name = "password")
     private String password;
+    
     private String phone;
     private int field;
 

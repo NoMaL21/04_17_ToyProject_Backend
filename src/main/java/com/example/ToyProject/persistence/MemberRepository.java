@@ -7,8 +7,8 @@ import com.example.ToyProject.model.MemberEntity;
 
 @Repository
 public interface MemberRepository extends JpaRepository<MemberEntity, String> {
-	MemberEntity findByEmail(String email);
-	Boolean existsByEmail(String email);
-	MemberEntity findByEmailAndPassword(String email, String pasword);
-	MemberEntity findByKey(String key);
+    MemberEntity findByEmail(String email);
+    Boolean existsByEmail(String email);
+    MemberEntity findByEmailAndPassword(String email, String password);
+    MemberEntity findByKey(String key);
 }
