@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ProjectDTO {
-    private String key;
+    private String projectkey;
     private String name;
     private String info;
     private int field;
@@ -27,7 +27,7 @@ public class ProjectDTO {
     private String boss; // MemberDTO의 key 변수를 참조
 
     public ProjectDTO(final ProjectEntity entity) {
-        this.key = entity.getKey();
+        this.projectkey = entity.getProjectkey();
         this.name = entity.getName();
         this.info = entity.getInfo();
         this.field = entity.getField();
@@ -35,12 +35,12 @@ public class ProjectDTO {
         this.status = entity.getStatus();
         this.sdate = entity.getSdate();
         this.edate = entity.getEdate();
-        this.boss = entity.getBoss().getKey(); // MemberDTO의 key 변수에서 값을 받아와서 할당
+        this.boss = entity.getBoss().getMemberkey(); // MemberDTO의 key 변수에서 값을 받아와서 할당
     }
 
     public static ProjectEntity toEntity(final ProjectDTO dto, final MemberEntity bossEntity) {
         return ProjectEntity.builder()
-            .key(dto.getKey())
+            .projectkey(dto.getProjectkey())
             .name(dto.getName())
             .info(dto.getInfo())
             .field(dto.getField())

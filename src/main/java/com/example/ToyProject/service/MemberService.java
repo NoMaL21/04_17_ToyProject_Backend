@@ -47,7 +47,7 @@ public class MemberService {
 	public MemberEntity findByKey(final String key) {
 		final MemberEntity originalMember = MemberRepository.findByKey(key);
 		
-		if(originalMember != null && passwordEncoder.matches(key, originalMember.getKey())) {
+		if(originalMember != null && passwordEncoder.matches(key, originalMember.getMemberkey())) {
 			return originalMember;
 		}
 		

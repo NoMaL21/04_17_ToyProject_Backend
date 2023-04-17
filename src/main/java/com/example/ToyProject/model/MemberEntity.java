@@ -25,8 +25,8 @@ public class MemberEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "key")
-    private String key;
+    @Column(name = "memberkey")
+    private String memberkey;
     
     @Column(name = "email")
     private String email;
@@ -42,7 +42,7 @@ public class MemberEntity {
 
     public MemberDTO toDTO() {
         return MemberDTO.builder()
-            .key(key)
+            .memberkey(memberkey)
             .email(email)
             .membername(membername)
             .password(password)

@@ -28,7 +28,7 @@ public class ProjectEntity {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String key;
+	private String projectkey;
 
     private String name;
     private String info;

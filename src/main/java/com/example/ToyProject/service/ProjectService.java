@@ -33,7 +33,7 @@ public class ProjectService {
 	public List<ProjectEntity>update(final ProjectEntity entity){
 		//Validations
 		validate(entity);
-		if (repository.existsById(entity.getKey())) {
+		if (repository.existsById(entity.getProjectkey())) {
 			repository.save(entity);
 		}
 		else {
@@ -45,8 +45,8 @@ public class ProjectService {
 	}
 	
 	public List<ProjectEntity> delete(final ProjectEntity entity) {
-		if(repository.existsById(entity.getKey())) {
-			repository.deleteById(entity.getKey());
+		if(repository.existsById(entity.getProjectkey())) {
+			repository.deleteById(entity.getProjectkey());
 		}
 		else {
 			throw new RuntimeException("id does not exist");

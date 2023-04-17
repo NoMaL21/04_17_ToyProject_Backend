@@ -17,16 +17,15 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ProjectHistoryDTO {
 
-    private String key;
+    private String historykey;
     private String memberKey;
     private String projectKey;
     private int status;
 
     public static ProjectHistoryDTO from(ProjectHistoryEntity entity) {
         return ProjectHistoryDTO.builder()
-                .key(entity.getKey())
-                .memberKey(entity.getMember().getKey())
-                .projectKey(entity.getProject().getKey())
+                .memberKey(entity.getMember().getMemberkey())
+                .projectKey(entity.getProject().getProjectkey())
                 .status(entity.getStatus())
                 .build();
     }

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MemberDTO {
 	private String token;
-	private String key;
+	private String memberkey;
 	private String email;
 	private String membername;
 	private String password;
@@ -24,7 +24,7 @@ public class MemberDTO {
 	
 	public static MemberEntity toEntity(MemberDTO memberDTO, PasswordEncoder passwordEncoder) {
 	    return MemberEntity.builder()
-	        .key(memberDTO.getKey())
+	        .memberkey(memberDTO.getMemberkey())
 	        .email(memberDTO.getEmail())
 	        .membername(memberDTO.getMembername())
 	        .password(passwordEncoder.encode(memberDTO.getPassword())) // 패스워드는 인코딩해서 저장

@@ -41,7 +41,7 @@ public class MemberController {
             MemberEntity registeredMember = memberService.create(member);
             MemberDTO responseMemberDTO = MemberDTO.builder()
                     .email(registeredMember.getEmail())
-                    .key(registeredMember.getKey())
+                    .memberkey(registeredMember.getMemberkey())
                     .membername(registeredMember.getMembername())
                     .build();
             return ResponseEntity.ok().body(responseMemberDTO);
@@ -63,7 +63,7 @@ public class MemberController {
             final String token = tokenProvider.create(member);
             final MemberDTO responseMemberDTO = MemberDTO.builder()
                     .email(member.getEmail())
-                    .key(member.getKey())
+                    .memberkey(member.getMemberkey())
                     .token(token)
                     .build();
 
